@@ -2,16 +2,18 @@ plugins {
     id 'java'
 
 }
+group 'org.gradle.sample'
+version '1.0'
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 repositories {
-    flatDir {
-        dirs 'libs'
-    }
+    mavenLocal()
     mavenCentral()
 }
 
 dependencies {
-    implementation name: 'utils-1.3.5'
+    compile ("org.gradle.sample:utils:1.3.5")
+    compile ("com.googlecode.jsontoken:jsontoken:1.1")
+
 }
